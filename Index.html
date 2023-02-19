@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jadwal Kerja</title>
+	<style type="text/css">
+		/* modernizing styles */
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f1f1f1;
+			padding: 20px;
+		}
+		form {
+			background-color: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.2);
+		}
+		h1 {
+			text-align: center;
+		}
+		label {
+			display: block;
+			margin-top: 10px;
+			font-weight: bold;
+		}
+		input[type="text"], input[type="datetime-local"] {
+			margin-top: 10px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			box-shadow: 0 0 5px rgba(0,0,0,0.2);
+		}
+		input[type="button"] {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-left: 10px;
+		}
+		input[type="button"]:hover {
+			background-color: blue;
+		}
+			/* A905 signature */
+	.signature {
+		text-align: center;
+		font-size: 14px;
+		color: #555;
+		margin-top: 20px;
+	}
+	.signature a {
+		color: blue;
+		text-decoration: none;
+		font-weight: bold;
+	}
+	.signature a:hover {
+		color: #000;
+	}
+	
+	/* gaya untuk layar besar */
+	@media (max-width: 600px) {
+body {
+  background-color: lightblue;
+}
+
+/* gaya untuk layar kecil */
+@media (max-width: 600px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+
+</style>
+</head>
+<body>
+	<h1>Jadwal Kerja</h1>
+	<form>
+		<label for="tanggal">Tanggal:</label>
+		<input type="datetime-local" id="tanggal" name="tanggal">
+			<label>BGH</label>
+	<label>Waiters</label>
+	<input type="text" id="waiters1" name="waiters1">
+	<input type="text" id="waiters2" name="waiters2">
+	<input type="text" id="waiters3" name="waiters3">
+	<input type="text" id="waiters4" name="waiters4">
+	<input type="text" id="waiters5" name="waiters5">
+
+	<label for="bartender">Bartender</label>
+	<input type="text" id="bartender" name="bartender">
+
+	<label>Dapur</label>
+	<input type="text" id="dapur1" name="dapur1">
+	<input type="text" id="dapur2" name="dapur2">
+	<input type="text" id="dapur3" name="dapur3">
+	<input type="text" id="dapur4" name="dapur4">
+	<input type="text" id="dapur5" name="dapur5">
+
+	<label>Libur</label>
+	<input type="text" id="libur1" name="libur1">
+	<input type="text" id="libur2" name="libur2">
+	<input type="text" id="libur3" name="libur3">
+	<input type="text" id="libur4" name="libur4">
+	<input type="text" id="libur5" name="libur5">
+	
+		<input type="button" value="Kirim ke WhatsApp" onclick="sendToWhatsApp()">
+		<div class="signature">
+    <a href="#">Made By A905</a>
+</div>
+	</form>
+
+	<script type="text/javascript">
+		function sendToWhatsApp() {
+			// Mengambil nilai dari input tanggal
+			var tanggal = document.getElementById("tanggal").value;
+
+			// Mengambil nilai dari input waiter dan bartender
+			var waiters1 = document.getElementById("waiters1").value;
+var waiters2 = document.getElementById("waiters2").value;
+var waiters3 = document.getElementById("waiters3").value;
+var waiters4 = document.getElementById("waiters4").value;
+var waiters5 = document.getElementById("waiters5").value;
+var bartender = document.getElementById("bartender").value;
+var dapur1 = document.getElementById("dapur1").value;
+var dapur2 = document.getElementById("dapur2").value;
+var dapur3 = document.getElementById("dapur3").value;
+var dapur4 = document.getElementById("dapur4").value;
+var dapur5 = document.getElementById("dapur5").value;
+var libur1 = document.getElementById("libur1").value;
+var libur2 = document.getElementById("libur2").value;
+var libur3 = document.getElementById("libur3").value;
+var libur4 = document.getElementById("libur4").value;
+var libur5 = document.getElementById("libur5").value;
+
+
+// Menggabungkan semua nilai ke dalam satu string
+var message = "Jadwal kerja untuk tanggal " + tanggal + "\n\n";
+message += "*BGH*\n";
+message += "Waiters\n";
+message += "- " + waiters1 + "\n";
+message += "- " + waiters2 + "\n";
+message += "- " + waiters3 + "\n";
+message += "- " + waiters4 + "\n";
+message += "- " + waiters5 + "\n\n";
+
+message += "Bartender: " + bartender + "\n\n";
+
+message += "Dapur\n";
+message += "Dapur 1: " + dapur1 + "\n";
+message += "Dapur 2: " + dapur2 + "\n";
+message += "Dapur 3: " + dapur3 + "\n";
+message += "Dapur 4: " + dapur4 + "\n";
+message += "Dapur 5: " + dapur5 + "\n\n";
+message += "Libur\n";
+message += "Libur 1: " + libur1 + "\n";
+message += "Libur 2: " + libur2 + "\n";
+message += "Libur 3: " + libur3 + "\n";
+message += "Libur 4: " + libur4 + "\n";
+message += "Libur 5: " + libur5 + "\n";
+		// Mengirim pesan ke WhatsApp
+		var url = "https://api.whatsapp.com/send?text=" + encodeURIComponent(message);
+		window.open(url);
+	}
+</script>
+</body>
+</html>
